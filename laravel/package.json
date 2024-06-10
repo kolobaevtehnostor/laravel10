@@ -13,5 +13,8 @@
         "vite": "^5.0.0",
         "vite-plugin-inspect": "^0.8.4",
         "vue-router": "^4.3.2"
+    },
+    "dependencies": {
+        "vuex": "^4.0.2"
     }
 }

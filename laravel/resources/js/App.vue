@@ -1,9 +1,31 @@
 <template>
   <div>
-    <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+    <nav-top></nav-top>
+    <div class="container">
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
+
+<script>
+
+import NavTop from './components/NavTop.vue'
+
+export default {
+      components: {
+        NavTop
+      }
+  }
+
+</script>
+
+<style>
+  body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .container {
+    justify-content: space-around;
+    margin: 25px;
+  }
+</style>
