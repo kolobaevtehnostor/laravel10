@@ -1,38 +1,33 @@
 <template>
     <div>
-        <h2>
-            {{ $store.state.count }}
-        </h2>
+        <div>
+            <button class="btn" @click="load"> load </button>
+            {{ test }}
+        </div>
     </div>
 </template>
 
 <script>
+    import Api from '@/api/api'
+
     export default {
-        name: "NavTop"
+        name: "NavTop",
+        data() {
+            return {
+                test: null
+            }
+        },
+        methods:{
+            async load() {
+                this.test = await Api.load('/api/abstract-factory');
+            }
+        }
     }
 </script>
 
 <style scoped>
-    #nav {
-        position: static;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        margin: 0 10px;
-    }
 
-    .logo {
-        font-weight: bold;
-        font-size: 22px;
-    }
-
-    .nav {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .nav>* {
+.nav>* {
         margin: 0 10px;
     }
 </style>

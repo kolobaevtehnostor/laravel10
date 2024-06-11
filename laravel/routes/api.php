@@ -22,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('migration', function () {
     return DB::table('migrations')->get();
 });
+
+Route::namespace('App\Http\Controllers\Api')->group(function () {
+    Route::get('abstract-factory', 'AbstractFactoryController@index');
+});
