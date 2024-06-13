@@ -1,33 +1,34 @@
 <template>
     <div>
-        <div>
-            <button class="btn" @click="load"> load </button>
-            {{ test }}
+        <div class="main">
+            <AbstractFactoryForm/>
+            <AbstractFactoryRequest/>
         </div>
     </div>
 </template>
 
 <script>
-    import Api from '@/api/api'
+import AbstractFactoryRequest from '@/components/AbstractFactory/AbstractFactoryRequest.vue'
+import AbstractFactoryForm from '@/components/AbstractFactory/AbstractFactoryForm.vue'
 
-    export default {
-        name: "NavTop",
-        data() {
-            return {
-                test: null
-            }
-        },
-        methods:{
-            async load() {
-                this.test = await Api.load('/api/abstract-factory');
-            }
-        }
-    }
+export default {
+    name: 'AbstractFactory',
+    components: {
+        AbstractFactoryRequest,
+        AbstractFactoryForm
+    },
+}
 </script>
 
 <style scoped>
+    .form-block input {
+        height: 25px;
+        margin: 10px;
+    }
 
-.nav>* {
-        margin: 0 10px;
+    .form-block button {
+        height: 25px;
+        margin: 10px auto;
+        width: 180px;
     }
 </style>

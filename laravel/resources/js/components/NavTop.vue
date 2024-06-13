@@ -1,15 +1,17 @@
 <template>
-    <div id="nav">
-        <div class="logo">
-            Паттерны <br> проектирования
-        </div>
-        <div class="nav">
-            <router-link to="/">
-                Home
-            </router-link> 
-            <router-link to="/abstract-factory">
-                Абстрактная фабрика
-            </router-link>
+    <div class="main">
+        <div id="nav">
+            <div class="logo">
+                Паттерны <br> проектирования
+            </div>
+            <div class="nav">
+                <router-link to="/">
+                    Home
+                </router-link>
+                <router-link to="/abstract-factory">
+                    Абстрактная фабрика
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -21,17 +23,24 @@
 </script>
 
 <style scoped>
+    .main {
+        background: #efefef;
+    }
+
     #nav {
         position: static;
         display: flex;
         align-items: center;
         width: 100%;
-        margin: 0 10px;
+        padding: 5px 0;
+        height: 45px;
     }
 
     .logo {
         font-weight: bold;
-        font-size: 22px;
+        font-size: 18px;
+        padding: 0 20px;
+        position: absolute;
     }
 
     .nav {
@@ -39,7 +48,7 @@
         justify-content: center;
         width: 100%;
     }
-    
+
     .nav>* {
         margin: 0 10px;
     }

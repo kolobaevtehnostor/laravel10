@@ -20,7 +20,7 @@ class HttpMethods extends AbstractTemplateMethods
     public function getDelete(): array
     {
         return [
-            'action' => 'public function edit(Request $request): \Illuminate\Http\Response',
+            'action' => 'public function delete(Request $request): \Illuminate\Http\Response',
         ];
     }
 

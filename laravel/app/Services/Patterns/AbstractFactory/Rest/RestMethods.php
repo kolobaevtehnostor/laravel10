@@ -21,7 +21,7 @@ class RestMethods extends AbstractTemplateMethods
     public function getDelete(): array
     {
         return [
-            'action' => 'public function destroy(' . ucfirst ($this->entity) . ' $' . $this->entity . ')',
+            'action' => 'public function destroy(' . ucfirst ($this->entity) . ' $' . $this->entity . '): void',
         ];
     }
 
