@@ -25,4 +25,5 @@ Route::get('migration', function () {
 
 Route::namespace('App\Http\Controllers\Api')->group(function () {
     Route::get('abstract-factory', 'AbstractFactoryController@index');
+    Route::get('bridge', 'BridgeController@index');
 });

@@ -1,6 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
+
 import Home from "@/views/Home.vue";
 import AbstractFactory from "@/views/AbstractFactory.vue";
+import Bridge from "@/views/Bridge.vue";
 import Error404 from "@/views/Error404.vue";
 
 const routes = [
@@ -13,6 +15,11 @@ const routes = [
         path: "/abstract-factory",
         name: "AbstractFactory",
         component: AbstractFactory,
+    },
+    {
+        path: "/bridge",
+        name: "Bridge",
+        component: Bridge,
     },
     {
         path: '/:pathMatch(.*)*',

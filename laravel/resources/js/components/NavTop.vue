@@ -11,6 +11,9 @@
                 <router-link to="/abstract-factory">
                     Абстрактная фабрика
                 </router-link>
+                <router-link to="/bridge">
+                    Мост
+                </router-link>
             </div>
         </div>
     </div>
