@@ -12,30 +12,41 @@ use App\Services\Patterns\Bridge\NotificationTypes\YouWinImplementation;
 
 class Service
 {
-    public function viewNotification(string $typeName, string $styleName = 'default'): array
-    {
-        $types = [
+    public function __construct(
+        private array $types = [
             'support_answer' => new SupportAnswerImplementation(),
             'discount' => new DiscountImplementation(),
             'system' => new SystemImplementation(),
             'you_win' => new YouWinImplementation(),
-        ];
-
-        $styles = [
+        ],
+        private array $styles = [
             'default' => new DefaultAbstraction(),
             'info' => new InfoAbstraction(),
             'danger' => new DangerAbstraction(),
-        ];
+        ],
+    ) {}
 
-        $type = $types[$typeName];
-        $style = $styles[$styleName];
+    /**
+     * @return array
+     */
+    public function getInfoList(): array
+    {
+        return [
+            'styles' => array_keys($this->styles),
+            'types' => array_keys($this->types)
+        ];
+    }
+
+    public function viewNotification(string $typeName, string $styleName = 'default'): array
+    {
+        $type = $this->types[$typeName];
+        $style = $this->styles[$styleName];
 
         $style->setType($type);
+
         return $style->getNotification();
 
-
-
-
+        //               Аналог без паттерна
         //$supportAnswer = new SupportAnswer();
         //
         //$n1 = new NotificationDanger($supportAnswer);

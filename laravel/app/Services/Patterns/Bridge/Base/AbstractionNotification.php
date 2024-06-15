@@ -33,7 +33,7 @@ abstract class AbstractionNotification
         }
 
         return [
-            'type' => $this->getStyle(),
+            'style' => $this->getStyle(),
             'message' => $this->notification->getMessage()
         ];
     }
